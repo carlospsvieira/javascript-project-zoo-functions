@@ -1,4 +1,3 @@
-const en = require('faker/lib/locales/en');
 const data = require('../data/zoo_data');
 
 // ----------- console tests ------------ //
@@ -6,14 +5,14 @@ const data = require('../data/zoo_data');
 // .reduce will count how many ages appear and separate them in new obj
 // new obj has to receive new keys child, adult and senior
 // separate child, adult and senior in keys with total number of times they appear. //
-const entryees = [
-  { name: 'Lara Carvalho', age: 5 },
-  { name: 'Frederico Moreira', age: 5 },
-  { name: 'Pedro Henrique Carvalho', age: 5 },
-  { name: 'Maria Costa', age: 18 },
-  { name: 'Núbia Souza', age: 18 },
-  { name: 'Carlos Nogueira', age: 50 },
-];
+// const entryees = [
+//   { name: 'Lara Carvalho', age: 5 },
+//   { name: 'Frederico Moreira', age: 5 },
+//   { name: 'Pedro Henrique Carvalho', age: 5 },
+//   { name: 'Maria Costa', age: 18 },
+//   { name: 'Núbia Souza', age: 18 },
+//   { name: 'Carlos Nogueira', age: 50 },
+// ];
 
 // if (person.includes('child')) acc.child *= 20.99;
 // if (person.includes('adult')) acc.adult *= 20.99;
