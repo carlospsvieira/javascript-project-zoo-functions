@@ -15,22 +15,6 @@ const data = require('../data/zoo_data');
 //
 // --------------------------------------- //
 
-// console.log(Object.keys(hours));
-species.at();
-function createSchedule(scheduleTarget) {
-  const day = Object.keys(hours).filter((jour) => jour.includes(scheduleTarget));
-  // create Object(table of content) //
-  const obj = {
-    [day]: {
-      officeHour: `Open from ${hours.open}am until ${hours.close}pm`,
-      // exhibition:
-    },
-  };
-  return obj[scheduleTarget];
-}
-
-console.log(createSchedule('Tuesday'));
-
 function getSchedule(scheduleTarget) {
 }
 
