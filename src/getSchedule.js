@@ -1,4 +1,3 @@
-// const { species, hours } = require('../data/zoo_data');
 const { species, hours } = require('../data/zoo_data');
 const data = require('../data/zoo_data');
 
@@ -6,16 +5,10 @@ const data = require('../data/zoo_data');
 // Species is an array of objects. Name is a key: 'string'. Availability is a key: array.
 // Hours is an object. Days are keys: + obj with 2 keys (open and close)
 
-// Return this:
-// const obj = {
-//   Tuesday: {
-//     officeHour: 'Open from 8am until 6pm', // `Open from ${hours[day].open} until ${hours[day]close}`
-// ------ >> Which animal (species.name) is in exhibition on that day ???
-//       exhibition: ['lions', 'tigers', 'bears', 'penguins', 'elephants', 'giraffes'], // species.availability
-//   },
-//
-// --------------------------------------- //
 const { Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday } = hours;
+
+// Schedule for each day of the week. //
+// There must be a way to refactor schedule //
 
 const schedule = {
   Tuesday: {
@@ -66,13 +59,21 @@ const schedule = {
   },
 };
 
+// return schedule days based on individual day search //
+const scheduleDays = (str) => ({
+  [str]: schedule[str],
+});
+
+// return animal schedule based on animal search //
+const getAnimalSchedule = (str) => species.find(({ name }) => name.includes(str)).availability;
+
+// main function to get schedule //
 function getSchedule(str) {
-  if (!str) return schedule;
-  if (species.filter((specie) => specie.name.includes(str))) {
-    return species.find(({ name }) => name.includes(str)).availability;
-  }
+  if (species.find(({ name }) => name.includes(str))) return getAnimalSchedule(str);
+  if (Object.keys(schedule).includes(str)) return scheduleDays(str);
+  if (!str || str.valueOf(undefined)) return schedule;
 }
 
-// console.log(getSchedule('Tuesday'));
+getSchedule();
 
 module.exports = getSchedule;
