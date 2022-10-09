@@ -7,8 +7,19 @@ const data = require('../data/zoo_data');
 
 const { Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday } = hours;
 
-// Schedule for each day of the week. //
-// There must be a way to refactor schedule //
+// // There must be a way to refactor schedule //
+
+// const createSchedule = (str) => ({
+//   [str]: {
+//     officeHour: `Open from ${hours[str].open}am until ${hours[str].close}pm`,
+//     exhibition: species.reduce((acc, specie) => {
+//       if (specie.availability.includes(str)) acc.push(specie.name);
+//       return acc;
+//     }, []),
+//   },
+// });
+
+// // Schedule for each day of the week. //
 
 const schedule = {
   Tuesday: {
